@@ -1,5 +1,5 @@
 .container {
-  background-color: aquamarine;
+  background-color: #25274D;
   height: 100vh;
   width: 100%;
   display: grid;
@@ -13,16 +13,23 @@
 }
 
 .header {
-  background-color: burlywood;
+  background-color:#C3CDD7;
   grid-area: header;
 }
 
 .nav {
-  background-color: goldenrod;
+  background-color: #ADD8E6;
   grid-area: nav;
 }
 
 .content {
-  background-color: aliceblue;
+  background-color: #E4E5E8;
   grid-area: content;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
