@@ -12,11 +12,48 @@ const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Calculate Final Grade",
+    title: "GCD",
+    path: "/gcd",
+    icon: <AiIcons.AiFillCalculator />,
+    cName: "nav-text",
+  },
+  {
+    title: "Sets",
+    path: "/sets",
+    icon: <AiIcons.AiFillCalculator />,
+    cName: "nav-text",
+  },
+  {
+    title: "Modulo",
+    path: "/mod",
+    icon: <AiIcons.AiFillCalculator />,
+    cName: "nav-text",
+  },
+  {
+    title: "Divisors",
+    path: "/divisors",
+    icon: <AiIcons.AiFillCalculator />,
+    cName: "nav-text",
+  },
+  {
+    title: "Prime Factorization",
+    path: "/factorization",
+    icon: <AiIcons.AiFillCalculator />,
+    cName: "nav-text",
+  },
+  {
+    title: "Linear Diophantine",
+    path: "/diophantine",
+    icon: <AiIcons.AiFillCalculator />,
+    cName: "nav-text",
+  },
+  {
+    title: "Desired Grade",
     path: "/finalgrade",
     icon: <AiIcons.AiFillCalculator />,
     cName: "nav-text",
   },
+  
 ];
 
 export default function Sidebar() {
