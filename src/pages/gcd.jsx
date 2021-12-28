@@ -1,20 +1,11 @@
 import { React, useState } from "react";
 import { Button, Form, Input, Card } from "antd";
 import "antd/dist/antd.css";
-
-
-function calculategcd(a, b) {
-  if (b) {
-    return calculategcd(b, a % b);
-  } else {
-    return Math.abs(a);
-  }
-}
+import calculategcd from "../algorithms/gcdCalculation";
 
 export default function Calcgcd() {
   const [gcd, setGcd] = useState(null);
   const onFinish = (values) => {
-    console.log("Success:", values);
     setGcd(calculategcd(values.firstnumber, values.secondnumber));
   };
 

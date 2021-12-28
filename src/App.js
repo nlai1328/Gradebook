@@ -1,10 +1,10 @@
 import "./App.css";
 import Sidebar from "./components/sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/homepage";
-import GCD from "./pages/calcGcdPage"
-import GradeCalc from "./pages/calcGradePage";
-import SetCalc from "./pages/setPage";
+import Home from "./pages/home";
+import GCD from "./pages/gcd"
+import GradeCalc from "./pages/grade";
+import SetCalc from "./pages/sets";
 function App() {
   return (
     <Router>
