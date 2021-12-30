@@ -1,12 +1,12 @@
 import { React, useState } from "react";
 import { Button, Form, Input, Card } from "antd";
 import "antd/dist/antd.css";
-import calculategcd from "../algorithms/gcdCalculation";
+import calculatedivisors from "../algorithms/divisorCalculation";
 
-export default function Calcgcd() {
-  const [gcd, setGcd] = useState(null);
+export default function Calcdivisors() {
+  const [divisors, setDivisors] = useState(null);
   const onFinish = (values) => {
-    setGcd(calculategcd(values.firstnumber, values.secondnumber));
+    setDivisors(calculatedivisors(values.firstnumber, []));
   };
 
   return (
@@ -24,7 +24,7 @@ export default function Calcgcd() {
           onFinish={onFinish}
         >
           <Form.Item
-            label="Number 1"
+            label="Number"
             name="firstnumber"
             rules={[
               {
@@ -33,28 +33,16 @@ export default function Calcgcd() {
               },
             ]}
           >
-            <Input type="number" autoComplete="off" min="0" />
+            <Input type="number" autoComplete="off" min="0" max="10000000"/>
           </Form.Item>
 
-          <Form.Item
-            label="Number 2"
-            name="secondnumber"
-            rules={[
-              {
-                required: true,
-                message: "Please input an integer!",
-              },
-            ]}
-          >
-            <Input type="number" autoComplete="off" min="0" />
-          </Form.Item>
           <Button style={{ paddingLeft: "0%" }} htmlType="submit">
             Calculate!
           </Button>
         </Form>
       </Card>
       <Card style={{ width: "40%", backgroundColor: "#E4E5E8" }}>
-        GCD = <b>{gcd} </b>
+        Divisors = {divisors} 
       </Card>
     </div>
   );

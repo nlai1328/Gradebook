@@ -5,6 +5,9 @@ import Home from "./pages/home";
 import GCD from "./pages/gcd"
 import GradeCalc from "./pages/grade";
 import SetCalc from "./pages/sets";
+import Calcmodulo from "./pages/modulo";
+import Calcdivisors from "./pages/divisors";
+
 function App() {
   return (
     <Router>
@@ -21,6 +24,8 @@ function App() {
             <Route path="/" exact element={<Home/>} />
             <Route path="/gcd" element={<GCD/>}/>
             <Route path="/sets" element={<SetCalc/>}/>
+            <Route path="/mod" element={<Calcmodulo/>}/>
+            <Route path="/divisors" element={<Calcdivisors/>}/>
             <Route path="/finalgrade" element={<GradeCalc/>}/>
           </Routes>
         </div>
