@@ -69,7 +69,7 @@ export default function SetCalc() {
           </Form.Item>
           <Col span={6}>
             <Card style={{ height: "84%" }}>
-              {calculatesets(set1, set2, operation, []).map((element) => <span>{element},</span>)}
+              {calculatesets(set1, set2, operation, []).map((element) =>  <>{element}, </>)}
             </Card>
           </Col>
         </Row>

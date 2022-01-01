@@ -1,17 +1,17 @@
 import { React, useState } from "react";
 import { Button, Form, Input, Card } from "antd";
 import "antd/dist/antd.css";
-import calculatedivisors from "../algorithms/divisorCalculation";
+import Calcpf from "../algorithms/pfCalculation";
 
-export default function Calcdivisors() {
-  const [divisors, setDivisors] = useState([]);
+export default function CalcPfs() {
+  const [pfs, setPfs] = useState([]);
   const onFinish = (values) => {
-    setDivisors(calculatedivisors(values.firstnumber, []));
+    setPfs(Calcpf(values.firstnumber, []));
   };
 
   return (
     <div style={{ paddingLeft: "10%", paddingTop: "5%" }}>
-      <b>Calculates Positive Divisors</b>
+      <b>Calculates Prime Factors</b>
       <Card style={{ width: "30%", backgroundColor: "#E4E5E8" }}>
         <Form
           name="basic"
@@ -42,7 +42,7 @@ export default function Calcdivisors() {
         </Form>
       </Card>
       <Card style={{ width: "30%", backgroundColor: "#E4E5E8" }}>
-        <b>Divisors:</b> <p>{divisors.map((element) =>  <>{element}, </>)}</p>
+      <b>Prime Factors:</b> <p>{pfs.map((element) =>  <>{element}, </>)}</p>
       </Card>
     </div>
   );

@@ -7,6 +7,7 @@ import GradeCalc from "./pages/grade";
 import SetCalc from "./pages/sets";
 import Calcmodulo from "./pages/modulo";
 import Calcdivisors from "./pages/divisors";
+import CalcPfs from "./pages/pf";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/sets" element={<SetCalc/>}/>
             <Route path="/mod" element={<Calcmodulo/>}/>
             <Route path="/divisors" element={<Calcdivisors/>}/>
+            <Route path="/factorization" element={<CalcPfs/>}/>
             <Route path="/finalgrade" element={<GradeCalc/>}/>
           </Routes>
         </div>
