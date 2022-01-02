@@ -4,12 +4,12 @@
   width: 100%;
   display: grid;
  
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 200px 1fr 0.5fr;
   grid-template-rows: 10%;
   grid-template-areas:
-    "header header"
-    "nav content "
-    "nav content ";
+    "header header header"
+    "nav content  history"
+    "nav content history";
 }
 
 .header {
@@ -23,8 +23,13 @@
 }
 
 .content {
-  background-color: #E4E5E8;
+  background-color: #fff;
   grid-area: content;
+}
+
+.history {
+  background-color: #fff;
+  grid-area: history;
 }
 
 * {

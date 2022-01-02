@@ -10,9 +10,9 @@ export default function Calcgcd() {
   };
 
   return (
-    <div style={{ paddingLeft: "40%", paddingTop: "5%" }}>
+    <div style={{ paddingLeft: "10%", paddingTop: "10%" }}>
       <b>Calculates GCD</b>
-      <Card style={{ width: "40%", backgroundColor: "#E4E5E8" }}>
+      <Card style={{ width: "50%", }}>
         <Form
           name="basic"
           labelCol={{
@@ -53,7 +53,7 @@ export default function Calcgcd() {
           </Button>
         </Form>
       </Card>
-      <Card style={{ width: "40%", backgroundColor: "#E4E5E8" }}>
+      <Card style={{ width: "50%",   margin:"1px"}}>
         GCD = <b>{gcd} </b>
       </Card>
     </div>

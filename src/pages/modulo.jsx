@@ -9,9 +9,9 @@ export default function Calcmodulo() {
   };
 
   return (
-    <div style={{ paddingLeft: "40%", paddingTop: "5%" }}>
+    <div style={{ paddingLeft: "10%", paddingTop: "10%" }}>
       <b>Calculates Mod</b>
-      <Card style={{ width: "60%", backgroundColor: "#E4E5E8" }}>
+      <Card style={{ width: "60%"}}>
         <Form
           name="basic"
           labelCol={{

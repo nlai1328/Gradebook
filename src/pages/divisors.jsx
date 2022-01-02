@@ -10,9 +10,9 @@ export default function Calcdivisors() {
   };
 
   return (
-    <div style={{ paddingLeft: "10%", paddingTop: "5%" }}>
+    <div style={{ paddingLeft: "10%", paddingTop: "10%" }}>
       <b>Calculates Positive Divisors</b>
-      <Card style={{ width: "30%", backgroundColor: "#E4E5E8" }}>
+      <Card style={{ width: "50%"}}>
         <Form
           name="basic"
           labelCol={{
@@ -41,7 +41,7 @@ export default function Calcdivisors() {
           </Button>
         </Form>
       </Card>
-      <Card style={{ width: "30%", backgroundColor: "#E4E5E8" }}>
+      <Card style={{ width: "50%"}}>
         <b>Divisors:</b> <p>{divisors.map((element) =>  <>{element}, </>)}</p>
       </Card>
     </div>

@@ -2,12 +2,8 @@ import { React, useState } from "react";
 import { Button, Form, Input, Card } from "antd";
 import "antd/dist/antd.css";
 
-
-
-
-
 export default function Calcgrade() {
-  const [requiredmark, setRequiredmark] = useState(null)
+  const [requiredmark, setRequiredmark] = useState(null);
   const onFinish = (values) => {
     console.log("Success:", values);
     const weightpercentage = values.weight / 100;
@@ -15,15 +11,16 @@ export default function Calcgrade() {
       (values.desiredGrade - values.currentGrade * (1 - weightpercentage)) /
         weightpercentage
     );
-    setRequiredmark((values.desiredGrade - values.currentGrade * (1 - weightpercentage)) /
-    weightpercentage)
+    setRequiredmark(
+      (values.desiredGrade - values.currentGrade * (1 - weightpercentage)) /
+        weightpercentage
+    );
   };
-  
+
   return (
-    
-    <div style={{ paddingLeft: "40%", paddingTop: "5%" }}>
-        Calculate Desired Grade based on final exam weight and current grade
-      <Card style={{ width: "40%", backgroundColor: "#E4E5E8" }}>
+    <div style={{ paddingLeft: "10%", paddingTop: "10%" }}>
+      Calculate Desired Grade based on final exam weight and current grade
+      <Card style={{ width: "50%"}}>
         <Form
           name="basic"
           labelCol={{
@@ -80,8 +77,8 @@ export default function Calcgrade() {
           </Button>
         </Form>
       </Card>
-      <Card style={{ width: "40%", backgroundColor: "#E4E5E8" }}>
-          You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
+      <Card style={{ width: "50%"}}>
+        You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
       </Card>
     </div>
   );

@@ -42,12 +42,6 @@ const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Linear Diophantine",
-    path: "/diophantine",
-    icon: <AiIcons.AiFillCalculator />,
-    cName: "nav-text",
-  },
-  {
     title: "Desired Grade",
     path: "/finalgrade",
     icon: <AiIcons.AiFillCalculator />,

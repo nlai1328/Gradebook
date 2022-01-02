@@ -8,6 +8,7 @@ import SetCalc from "./pages/sets";
 import Calcmodulo from "./pages/modulo";
 import Calcdivisors from "./pages/divisors";
 import CalcPfs from "./pages/pf";
+import Historybar from "./components/history";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/finalgrade" element={<GradeCalc/>}/>
           </Routes>
         </div>
+        <div className="history"><Historybar/></div>
       </div>
     </Router>
   );
