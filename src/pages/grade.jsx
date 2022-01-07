@@ -1,26 +1,37 @@
 import { React, useState } from "react";
 import { Button, Form, Input, Card } from "antd";
-import "antd/dist/antd.css";
+import axios from "axios";
+import Historybar from "../components/history";
 
 export default function Calcgrade() {
   const [requiredmark, setRequiredmark] = useState(null);
   const onFinish = (values) => {
-    console.log("Success:", values);
     const weightpercentage = values.weight / 100;
-    console.log(
-      (values.desiredGrade - values.currentGrade * (1 - weightpercentage)) /
-        weightpercentage
-    );
     setRequiredmark(
       (values.desiredGrade - values.currentGrade * (1 - weightpercentage)) /
         weightpercentage
     );
+    values.operation = "Grade";
+    values.result = Number(
+      (values.desiredGrade - values.currentGrade * (1 - weightpercentage)) /
+        weightpercentage
+    ).toFixed(2);
+    axios.post("http://localhost:4000/grade", values);
   };
 
   return (
-    <div style={{ paddingLeft: "10%", paddingTop: "10%" }}>
-      Calculate Desired Grade based on final exam weight and current grade
-      <Card style={{ width: "50%"}}>
+    <div
+      style={{
+        paddingLeft: "5%",
+        paddingTop: "5%",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <Card style={{ width: "50%" }}>
+      <div style={{paddingBottom:"2%"}}>
+        <b> Calculate Desired Grade based on final exam weight and current grade: </b>
+        </div>
         <Form
           name="basic"
           labelCol={{
@@ -76,10 +87,13 @@ export default function Calcgrade() {
             Calculate!
           </Button>
         </Form>
+        <Card style={{ width: "50%" }}>
+          You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
+        </Card>
       </Card>
-      <Card style={{ width: "50%"}}>
-        You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
-      </Card>
+      <div style={{ paddingLeft: "5%", width: "80%" }}>
+        <Historybar name="Grade" />
+      </div>
     </div>
   );
 }

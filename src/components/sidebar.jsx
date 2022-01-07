@@ -47,7 +47,6 @@ const SidebarData = [
     icon: <AiIcons.AiFillCalculator />,
     cName: "nav-text",
   },
-  
 ];
 
 export default function Sidebar() {

@@ -1,17 +1,31 @@
 import { React, useState } from "react";
 import { Button, Form, Input, Card } from "antd";
-import "antd/dist/antd.css";
+import axios from "axios";
+import Historybar from "../components/history";
 
 export default function Calcmodulo() {
   const [mod, setMod] = useState(null);
   const onFinish = (values) => {
-    setMod(values.firstnumber % values.secondnumber);
+    setMod(values.firstvalue % values.secondvalue);
+    values.operation = "Mod";
+    values.result = values.firstvalue % values.secondvalue;
+    axios.post("http://localhost:4000/doubleop", values);
   };
 
   return (
-    <div style={{ paddingLeft: "10%", paddingTop: "10%" }}>
-      <b>Calculates Mod</b>
-      <Card style={{ width: "60%"}}>
+    <div
+      style={{
+        paddingLeft: "5%",
+        paddingTop: "5%",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <Card style={{ width: "90%" }}>
+      <div style={{paddingBottom:"2%"}}>
+        <b>Calculates Mod</b>
+        <h3>Input two positive integers</h3>
+        </div>
         <Form
           name="basic"
           labelCol={{
@@ -24,8 +38,7 @@ export default function Calcmodulo() {
         >
           <Input.Group compact>
             <Form.Item
-              
-              name="firstnumber"
+              name="firstvalue"
               rules={[
                 {
                   required: true,
@@ -35,12 +48,12 @@ export default function Calcmodulo() {
             >
               <Input type="number" autoComplete="off" min="0" />
             </Form.Item>
-            <div >
+            <div style={{ paddingRight: "10%" }}>
               <h2>mod</h2>
-              </div>
+            </div>
             <Form.Item
-              style={{ paddingLeft: "4%" }}
-              name="secondnumber"
+              style={{ paddingLeft: "1%" }}
+              name="secondvalue"
               rules={[
                 {
                   required: true,
@@ -48,21 +61,24 @@ export default function Calcmodulo() {
                 },
               ]}
             >
-              <Input type="number" autoComplete="off" min="0" style={{ paddingTop: "4%" }}/>
+              <Input
+                type="number"
+                autoComplete="off"
+                min="0"
+                style={{ paddingTop: "4%" }}
+              />
             </Form.Item>
-            <h2> = {mod}</h2>
+            <h3> = {mod}</h3>
           </Input.Group>
-          
-          <Button
-            style={{ paddingLeft: "0%" }}
-           
-            htmlType="submit"
-          >
+
+          <Button style={{ paddingLeft: "0%" }} htmlType="submit">
             Calculate!
           </Button>
-          
         </Form>
       </Card>
+      <div style={{ paddingLeft: "5%", width: "100%" }}>
+        <Historybar name="Mod" />
+      </div>
     </div>
   );
 }

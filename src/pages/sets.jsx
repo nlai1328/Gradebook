@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "antd/dist/antd.css";
+
 import { Input, Row, Col, Form, Button, Card } from "antd";
 import calculatesets from "../algorithms/setCalculation";
 
@@ -23,6 +23,8 @@ export default function SetCalc() {
         .filter((e) => e !== "")
         .sort()
     );
+    console.log(calculatesets(set1, set2, operation, []))
+   
   };
 
   return (
@@ -69,7 +71,9 @@ export default function SetCalc() {
           </Form.Item>
           <Col span={6}>
             <Card style={{ height: "84%" }}>
-              {calculatesets(set1, set2, operation, []).map((element) =>  <>{element}, </>)}
+              {calculatesets(set1, set2, operation, []).map((element) => (
+                <>{element}, </>
+              ))}
             </Card>
           </Col>
         </Row>

@@ -1,18 +1,32 @@
 import { React, useState } from "react";
 import { Button, Form, Input, Card } from "antd";
-import "antd/dist/antd.css";
+import axios from "axios";
 import calculategcd from "../algorithms/gcdCalculation";
+import Historybar from "../components/history";
 
 export default function Calcgcd() {
   const [gcd, setGcd] = useState(null);
   const onFinish = (values) => {
-    setGcd(calculategcd(values.firstnumber, values.secondnumber));
+    setGcd(calculategcd(values.firstvalue, values.secondvalue));
+    values.operation = "GCD";
+    values.result = calculategcd(values.firstvalue, values.secondvalue);
+    axios.post("http://localhost:4000/doubleop", values);
   };
 
   return (
-    <div style={{ paddingLeft: "10%", paddingTop: "10%" }}>
-      <b>Calculates GCD</b>
-      <Card style={{ width: "50%", }}>
+    <div
+      style={{
+        paddingLeft: "5%",
+        display: "flex",
+        paddingTop: "5%",
+        alignItems: "center",
+      }}
+    >
+      <Card style={{ width: "50%" }}>
+        <div style={{paddingBottom:"2%"}}>
+        <b> Calculates GCD: </b>
+        <h3>Input two positive integers</h3>
+        </div>
         <Form
           name="basic"
           labelCol={{
@@ -25,7 +39,7 @@ export default function Calcgcd() {
         >
           <Form.Item
             label="Number 1"
-            name="firstnumber"
+            name="firstvalue"
             rules={[
               {
                 required: true,
@@ -38,7 +52,7 @@ export default function Calcgcd() {
 
           <Form.Item
             label="Number 2"
-            name="secondnumber"
+            name="secondvalue"
             rules={[
               {
                 required: true,
@@ -52,10 +66,22 @@ export default function Calcgcd() {
             Calculate!
           </Button>
         </Form>
+        <div
+          style={{
+            width: "50%",
+            display: "block",
+            paddingTop: "5%",
+          }}
+        >
+          <Card>
+            GCD = <b>{gcd} </b>
+          </Card>
+        </div>
       </Card>
-      <Card style={{ width: "50%",   margin:"1px"}}>
-        GCD = <b>{gcd} </b>
-      </Card>
+
+      <div style={{ paddingLeft: "5%", width: "80%" }}>
+        <Historybar name="GCD" />
+      </div>
     </div>
   );
 }

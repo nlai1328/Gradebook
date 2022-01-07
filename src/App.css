@@ -4,12 +4,12 @@
   width: 100%;
   display: grid;
  
-  grid-template-columns: 200px 1fr 0.5fr;
+  grid-template-columns: 200px 1fr;
   grid-template-rows: 10%;
   grid-template-areas:
-    "header header header"
-    "nav content  history"
-    "nav content history";
+    "header header "
+    "nav content  "
+    "nav content ";
 }
 
 .header {
@@ -27,10 +27,6 @@
   grid-area: content;
 }
 
-.history {
-  background-color: #fff;
-  grid-area: history;
-}
 
 * {
   box-sizing: border-box;
