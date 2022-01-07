@@ -22,9 +22,9 @@ export default function Calcmodulo() {
       }}
     >
       <Card style={{ width: "90%" }}>
-      <div style={{paddingBottom:"2%"}}>
-        <b>Calculates Mod</b>
-        <h3>Input two positive integers</h3>
+        <div style={{ paddingBottom: "2%" }}>
+          <b>Calculates Mod</b>
+          <h3>Input two positive integers</h3>
         </div>
         <Form
           name="basic"

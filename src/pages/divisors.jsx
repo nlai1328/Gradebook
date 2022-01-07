@@ -23,9 +23,9 @@ export default function Calcdivisors() {
       }}
     >
       <Card style={{ width: "50%" }}>
-      <div style={{paddingBottom:"2%"}}>
-        <b> Calculates all positive divisors: </b>
-        <h3>Input a positive integer less than 10000000</h3>
+        <div style={{ paddingBottom: "2%" }}>
+          <b> Calculates all positive divisors: </b>
+          <h3>Input a positive integer less than 10000000</h3>
         </div>
         <Form
           name="basic"

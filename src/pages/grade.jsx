@@ -29,8 +29,12 @@ export default function Calcgrade() {
       }}
     >
       <Card style={{ width: "50%" }}>
-      <div style={{paddingBottom:"2%"}}>
-        <b> Calculate Desired Grade based on final exam weight and current grade: </b>
+        <div style={{ paddingBottom: "2%" }}>
+          <b>
+            {" "}
+            Calculate Desired Grade based on final exam weight and current
+            grade:{" "}
+          </b>
         </div>
         <Form
           name="basic"
@@ -87,9 +91,11 @@ export default function Calcgrade() {
             Calculate!
           </Button>
         </Form>
-        <Card style={{ width: "50%" }}>
-          You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
-        </Card>
+        <div style={{ paddingTop: "5%" }}>
+          <Card style={{ width: "50%" }}>
+            You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
+          </Card>
+        </div>
       </Card>
       <div style={{ paddingLeft: "5%", width: "80%" }}>
         <Historybar name="Grade" />

@@ -70,23 +70,43 @@ const columns_3 = [
   },
 ];
 
+const columns_4 = [
+  {
+    title: "Operation",
+    dataIndex: "operation",
+    width: 150,
+  },
+  {
+    title: "Set 1",
+    dataIndex: "firstvalue",
+    width: 150,
+  },
+  {
+    title: "Set 2",
+    dataIndex: "secondvalue",
+    width: 150,
+  },
+  {
+    title: "Resulting Set",
+    dataIndex: "result",
+    width: 120,
+  },
+];
+
 export default function Historybar(props) {
   const [values, setValues] = useState([{}]);
   const [columns, setColumns] = useState([]);
 
-  
-  
   const gcdvalues = [];
   const modvalues = [];
   const divisorvalues = [];
   const primevalues = [];
   const gradevalues = [];
+  const setvalues = [];
 
   function refreshPage() {
     window.location.reload(false);
   }
-
- 
 
   useEffect(() => {
     if (props.name === "GCD" || props.name === "Mod") {
@@ -181,6 +201,26 @@ export default function Historybar(props) {
             console.log(error);
           }
         );
+    } else {
+      setColumns(columns_4);
+      fetch("http://localhost:4000/sets")
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            result.map(function (e) {
+              setvalues.unshift(e);
+            });
+
+            const newsetvalues = setvalues
+              ? Array.from(new Set(setvalues.map((h) => h)))
+              : [];
+            setValues(newsetvalues);
+          },
+
+          (error) => {
+            console.log(error);
+          }
+        );
     }
   }, [props.name]);
 
@@ -188,7 +228,7 @@ export default function Historybar(props) {
     <div style={{ paddingRight: "3%" }}>
       <Card>
         <h1>History </h1>
-        
+
         <Table
           columns={columns}
           dataSource={values}
@@ -199,7 +239,6 @@ export default function Historybar(props) {
         <Button style={{ width: "40%" }} onClick={refreshPage}>
           Refresh
         </Button>
-      
       </Card>
     </div>
   );

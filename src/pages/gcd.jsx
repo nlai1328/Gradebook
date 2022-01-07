@@ -23,9 +23,9 @@ export default function Calcgcd() {
       }}
     >
       <Card style={{ width: "50%" }}>
-        <div style={{paddingBottom:"2%"}}>
-        <b> Calculates GCD: </b>
-        <h3>Input two positive integers</h3>
+        <div style={{ paddingBottom: "2%" }}>
+          <b> Calculates GCD: </b>
+          <h3>Input two positive integers</h3>
         </div>
         <Form
           name="basic"

@@ -1,7 +1,7 @@
 export default function calculatesets(array1, array2, operation, newarray) {
   var i = 0;
   var j = 0;
-  if (operation === "union") {
+  if (operation === "Set union") {
     while (array1.length > i && array2.length > j) {
       if (array1[i] < array2[j]) {
         newarray.push(array1[i]);
@@ -27,7 +27,7 @@ export default function calculatesets(array1, array2, operation, newarray) {
     }
 
     return newarray;
-  } else if (operation === "intersection") {
+  } else if (operation === "Set intersection") {
     while (array1.length > i && array2.length > j) {
       if (array1[i] === array2[j]) {
         newarray.push(array1[i]);

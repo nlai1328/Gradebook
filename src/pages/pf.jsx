@@ -24,9 +24,9 @@ export default function CalcPfs() {
       }}
     >
       <Card style={{ width: "50%" }}>
-      <div style={{paddingBottom:"2%"}}>
-        <b> Calculates all prime factors: </b>
-        <h3>Input a positive integer less than 10000000</h3>
+        <div style={{ paddingBottom: "2%" }}>
+          <b> Calculates all prime factors: </b>
+          <h3>Input a positive integer less than 10000000</h3>
         </div>
         <Form
           name="basic"

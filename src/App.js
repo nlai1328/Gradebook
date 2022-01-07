@@ -13,7 +13,9 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <div className="header">Number Theory Calculator</div>
+        <div className="header">
+          <h1>NTheorylab</h1>
+        </div>
         <div className="nav">
           {" "}
           <Sidebar />{" "}
