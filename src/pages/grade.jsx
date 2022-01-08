@@ -24,81 +24,72 @@ export default function Calcgrade() {
       style={{
         paddingLeft: "5%",
         paddingTop: "5%",
-        display: "flex",
-        alignItems: "center",
+        display: "grid",
+        gridTemplateColumns: " 1fr 1fr",
       }}
     >
-      <Card style={{ width: "50%" }}>
-        <div style={{ paddingBottom: "2%" }}>
-          <b>
+      <div>
+        <Card style={{ width: "90%" }}>
+          {" "}
+          <div style={{ paddingBottom: "2%" }}>
             {" "}
-            Calculate Desired Grade based on final exam weight and current
-            grade:{" "}
-          </b>
-        </div>
-        <Form
-          name="basic"
-          labelCol={{
-            span: 8,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          onFinish={onFinish}
-        >
-          <Form.Item
-            label="Current Grade"
-            name="currentGrade"
-            rules={[
-              {
-                required: true,
-                message: "Please input current grade!",
-              },
-            ]}
+            <b>
+              {" "}
+              Calculate Desired Grade based on final exam weight and current
+              grade:{" "}
+            </b>{" "}
+          </div>{" "}
+          <Form
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            onFinish={onFinish}
           >
-            <Input type="number" autoComplete="off" min="0" max="100" />
-          </Form.Item>
-
-          <Form.Item
-            label="Desired Grade"
-            name="desiredGrade"
-            rules={[
-              {
-                required: true,
-                message: "Please input desired grade!",
-              },
-            ]}
-          >
-            <Input type="number" autoComplete="off" min="0" max="100" />
-          </Form.Item>
-          <Form.Item
-            label="Exam Weight %"
-            name="weight"
-            rules={[
-              {
-                required: true,
-                message: "Please input exam weight!",
-              },
-            ]}
-          >
-            <Input type="number" autoComplete="off" min="1" max="100" />
-          </Form.Item>
-          <Button
-            style={{ paddingLeft: "0%" }}
-            type="primary"
-            htmlType="submit"
-          >
-            Calculate!
-          </Button>
-        </Form>
-        <div style={{ paddingTop: "5%" }}>
-          <Card style={{ width: "50%" }}>
-            You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
-          </Card>
-        </div>
-      </Card>
-      <div style={{ paddingLeft: "5%", width: "80%" }}>
-        <Historybar name="Grade" />
+            {" "}
+            <Form.Item
+              label="Current Grade"
+              name="currentGrade"
+              rules={[
+                { required: true, message: "Please input current grade!" },
+              ]}
+            >
+              {" "}
+              <Input type="number" autoComplete="off" min="0" max="100" />{" "}
+            </Form.Item>{" "}
+            <Form.Item
+              label="Desired Grade"
+              name="desiredGrade"
+              rules={[
+                { required: true, message: "Please input desired grade!" },
+              ]}
+            >
+              {" "}
+              <Input type="number" autoComplete="off" min="0" max="100" />{" "}
+            </Form.Item>{" "}
+            <Form.Item
+              label="Exam Weight %"
+              name="weight"
+              rules={[{ required: true, message: "Please input exam weight!" }]}
+            >
+              {" "}
+              <Input type="number" autoComplete="off" min="1" max="100" />{" "}
+            </Form.Item>{" "}
+            <Button style={{ paddingLeft: "0%" }} htmlType="submit">
+              {" "}
+              Calculate!{" "}
+            </Button>{" "}
+          </Form>{" "}
+          <div style={{ paddingTop: "5%" }}>
+            {" "}
+            <Card style={{ width: "50%" }}>
+              {" "}
+              You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam{" "}
+            </Card>{" "}
+          </div>{" "}
+        </Card>
+      </div>
+      <div>
+        <Historybar name="Prime" />
       </div>
     </div>
   );

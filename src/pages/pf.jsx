@@ -19,54 +19,56 @@ export default function CalcPfs() {
       style={{
         paddingLeft: "5%",
         paddingTop: "5%",
-        display: "flex",
-        alignItems: "center",
+        display: "grid",
+        gridTemplateColumns: " 1fr 1fr",
       }}
     >
-      <Card style={{ width: "50%" }}>
-        <div style={{ paddingBottom: "2%" }}>
-          <b> Calculates all prime factors: </b>
-          <h3>Input a positive integer less than 10000000</h3>
-        </div>
-        <Form
-          name="basic"
-          labelCol={{
-            span: 8,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          onFinish={onFinish}
-        >
-          <Form.Item
-            label="Number"
-            name="firstvalue"
-            rules={[
-              {
-                required: true,
-                message: "Please input an integer!",
-              },
-            ]}
+      <div>
+        <Card style={{ width: "90%" }}>
+          <div style={{ paddingBottom: "2%" }}>
+            <b> Calculates all prime factors: </b>
+            <h3>Input a positive integer less than 10000000</h3>
+          </div>
+          <Form
+            name="basic"
+            labelCol={{
+              span: 8,
+            }}
+            wrapperCol={{
+              span: 16,
+            }}
+            onFinish={onFinish}
           >
-            <Input type="number" autoComplete="off" min="0" max="10000000" />
-          </Form.Item>
+            <Form.Item
+              label="Number"
+              name="firstvalue"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input an integer!",
+                },
+              ]}
+            >
+              <Input type="number" autoComplete="off" min="0" max="10000000" />
+            </Form.Item>
 
-          <Button style={{ paddingLeft: "0%" }} htmlType="submit">
-            Calculate!
-          </Button>
-        </Form>
-        <div style={{ paddingTop: "10%" }}>
-          <Card style={{ width: "50%" }}>
-            <b>Prime Factors:</b>{" "}
-            <p>
-              {pfs.map((element) => (
-                <>{element}, </>
-              ))}
-            </p>
-          </Card>
-        </div>
-      </Card>
-      <div style={{ paddingLeft: "5%", width: "80%" }}>
+            <Button style={{ paddingLeft: "0%" }} htmlType="submit">
+              Calculate!
+            </Button>
+          </Form>
+          <div style={{ paddingTop: "10%" }}>
+            <Card style={{ width: "50%" }}>
+              <b>Prime Factors:</b>{" "}
+              <p>
+                {pfs.map((element) => (
+                  <>{element}, </>
+                ))}
+              </p>
+            </Card>
+          </div>
+        </Card>
+      </div>
+      <div>
         <Historybar name="Prime" />
       </div>
     </div>

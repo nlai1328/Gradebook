@@ -13,9 +13,7 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <div className="header">
-          <h1>NTheorylab</h1>
-        </div>
+        <div className="header"></div>
         <div className="nav">
           {" "}
           <Sidebar />{" "}

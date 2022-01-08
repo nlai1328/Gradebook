@@ -52,8 +52,8 @@ const SidebarData = [
 export default function Sidebar() {
   return (
     <>
-      <IconContext.Provider value={{ color: "#25274D" }}>
-        <nav>
+      <IconContext.Provider value={{ color: "#25274D", size: "30%" }}>
+        <nav style={{ paddingTop: "5%" }}>
           <ul className="nav-menu-items">
             {SidebarData.map((item, index) => {
               return (

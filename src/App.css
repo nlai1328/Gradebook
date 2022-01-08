@@ -5,7 +5,7 @@
   display: grid;
  
   grid-template-columns: 200px 1fr;
-  grid-template-rows: 10%;
+  grid-template-rows: 7%;
   grid-template-areas:
     "header header "
     "nav content  "
@@ -13,17 +13,17 @@
 }
 
 .header {
-  background-color:#C3CDD7;
+  background-color:#3AAFA9;
   grid-area: header;
 }
 
 .nav {
-  background-color: #ADD8E6;
+  background-color: #DEF2F1;
   grid-area: nav;
 }
 
 .content {
-  background-color: #fff;
+  background-color: #FEFFFF;
   grid-area: content;
 }
 

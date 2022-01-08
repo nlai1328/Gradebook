@@ -56,17 +56,17 @@ export default function SetCalc() {
     <div
       style={{
         paddingLeft: "5%",
-        paddingTop: "10%",
+        paddingTop: "5%",
         display: "grid",
         gridTemplateColumns: " 1fr 1fr",
       }}
     >
       <div>
         <Card style={{ width: "90%" }}>
-        <div style={{ paddingBottom: "2%" }}>
-          <b> Set Theory Calculator: </b>
-          <h3>Input non duplicate elements in each field</h3>
-        </div>
+          <div style={{ paddingBottom: "2%" }}>
+            <b> Set Theory Calculator: </b>
+            <h3>Input non duplicate elements in each field</h3>
+          </div>
           <Form onFinish={onFinish}>
             <Row>
               <Form.Item
@@ -139,7 +139,7 @@ export default function SetCalc() {
           </Form>
         </Card>
       </div>
-      <div style={{ paddingLeft: "10%", marginBottom: "10%" }}>
+      <div>
         <Historybar name="Set" />
       </div>
     </div>
