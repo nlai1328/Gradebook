@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NTheorylab/static/css/main.723c2060.css",
+    "main.js": "/NTheorylab/static/js/main.741cbcd8.js",
+    "static/js/787.70dfdf7b.chunk.js": "/NTheorylab/static/js/787.70dfdf7b.chunk.js",
+    "index.html": "/NTheorylab/index.html",
+    "main.723c2060.css.map": "/NTheorylab/static/css/main.723c2060.css.map",
+    "main.741cbcd8.js.map": "/NTheorylab/static/js/main.741cbcd8.js.map",
+    "787.70dfdf7b.chunk.js.map": "/NTheorylab/static/js/787.70dfdf7b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.723c2060.css",
+    "static/js/main.741cbcd8.js"
+  ]
+}

@@ -89,7 +89,7 @@ export default function Calcgrade() {
         </Card>
       </div>
       <div>
-        <Historybar name="Prime" />
+        <Historybar name="Grade" />
       </div>
     </div>
   );
