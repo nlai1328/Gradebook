@@ -16,7 +16,7 @@ export default function Calcgrade() {
       (values.desiredGrade - values.currentGrade * (1 - weightpercentage)) /
         weightpercentage
     ).toFixed(2);
-    axios.post("http://localhost:4000/grade", values);
+    axios.post("https://ntheorylab-backend.herokuapp.com/grade", values);
   };
 
   return (
@@ -30,22 +30,22 @@ export default function Calcgrade() {
     >
       <div>
         <Card style={{ width: "90%" }}>
-          {" "}
+         
           <div style={{ paddingBottom: "2%" }}>
-            {" "}
+          
             <b>
-              {" "}
+          
               Calculate Desired Grade based on final exam weight and current
-              grade:{" "}
-            </b>{" "}
-          </div>{" "}
+              grade:
+            </b>
+          </div>
           <Form
             name="basic"
             labelCol={{ span: 8 }}
             wrapperCol={{ span: 16 }}
             onFinish={onFinish}
           >
-            {" "}
+          
             <Form.Item
               label="Current Grade"
               name="currentGrade"
@@ -53,9 +53,9 @@ export default function Calcgrade() {
                 { required: true, message: "Please input current grade!" },
               ]}
             >
-              {" "}
-              <Input type="number" autoComplete="off" min="0" max="100" />{" "}
-            </Form.Item>{" "}
+              
+              <Input type="number" autoComplete="off" min="0" max="100" />
+            </Form.Item>
             <Form.Item
               label="Desired Grade"
               name="desiredGrade"
@@ -63,29 +63,29 @@ export default function Calcgrade() {
                 { required: true, message: "Please input desired grade!" },
               ]}
             >
-              {" "}
-              <Input type="number" autoComplete="off" min="0" max="100" />{" "}
-            </Form.Item>{" "}
+         
+              <Input type="number" autoComplete="off" min="0" max="100" />
+            </Form.Item>
             <Form.Item
               label="Exam Weight %"
               name="weight"
               rules={[{ required: true, message: "Please input exam weight!" }]}
             >
-              {" "}
-              <Input type="number" autoComplete="off" min="1" max="100" />{" "}
-            </Form.Item>{" "}
+          
+              <Input type="number" autoComplete="off" min="1" max="100" />
+            </Form.Item>
             <Button style={{ paddingLeft: "0%" }} htmlType="submit">
-              {" "}
-              Calculate!{" "}
-            </Button>{" "}
-          </Form>{" "}
+          
+              Calculate!
+            </Button>
+          </Form>
           <div style={{ paddingTop: "5%" }}>
-            {" "}
+   
             <Card style={{ width: "50%" }}>
-              {" "}
-              You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam{" "}
-            </Card>{" "}
-          </div>{" "}
+         
+              You need a <b>{Number(requiredmark).toFixed(2)} % </b>on your exam
+            </Card>
+          </div>
         </Card>
       </div>
       <div>
