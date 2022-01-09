@@ -11,7 +11,7 @@ export default function CalcPfs() {
     setPfs(Calcpf(values.firstvalue, []));
     values.operation = "Prime Factorization";
     values.result = Calcpf(values.firstvalue, []).toString();
-    axios.post("https://ntheorylab-backend.herokuapp.com/singleop", values);
+    axios.post("http://localhost:4000/singleop", values);
   };
 
   return (

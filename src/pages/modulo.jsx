@@ -9,7 +9,7 @@ export default function Calcmodulo() {
     setMod(values.firstvalue % values.secondvalue);
     values.operation = "Mod";
     values.result = values.firstvalue % values.secondvalue;
-    axios.post("https://ntheorylab-backend.herokuapp.com/doubleop", values);
+    axios.post("http://localhost:4000/doubleop", values);
   };
 
   return (
