@@ -10,7 +10,7 @@ export default function Calcdivisors() {
     setDivisors(calculatedivisors(values.firstvalue, []));
     values.operation = "Divisors";
     values.result = calculatedivisors(values.firstvalue, []).toString();
-    axios.post("http://localhost:4000/singleop", values);
+    axios.post("https://ntheorylab-backend.herokuapp.com/singleop", values);
   };
 
   return (

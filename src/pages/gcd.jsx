@@ -10,7 +10,7 @@ export default function Calcgcd() {
     setGcd(calculategcd(values.firstvalue, values.secondvalue));
     values.operation = "GCD";
     values.result = calculategcd(values.firstvalue, values.secondvalue);
-    axios.post("http://localhost:4000/doubleop", values);
+    axios.post("https://ntheorylab-backend.herokuapp.com/doubleop", values);
   };
 
   return (

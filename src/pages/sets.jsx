@@ -49,7 +49,7 @@ export default function SetCalc() {
     ).toString();
     console.log(values.result);
 
-    axios.post("http://localhost:4000/sets", values);
+    axios.post("https://ntheorylab-backend.herokuapp.com/sets", values);
   };
 
   return (

@@ -111,7 +111,7 @@ export default function Historybar(props) {
   useEffect(() => {
     if (props.name === "GCD" || props.name === "Mod") {
       setColumns(columns_2);
-      fetch("http://localhost:4000/doubleop")
+      fetch("https://ntheorylab-backend.herokuapp.com/doubleop")
         .then((res) => res.json())
         .then(
           (result) => {
@@ -146,7 +146,7 @@ export default function Historybar(props) {
         );
     } else if (props.name === "Prime" || props.name === "Divisor") {
       setColumns(columns_1);
-      fetch("http://localhost:4000/singleop")
+      fetch("https://ntheorylab-backend.herokuapp.com/singleop")
         .then((res) => res.json())
         .then(
           (result) => {
@@ -181,7 +181,7 @@ export default function Historybar(props) {
         );
     } else if (props.name === "Grade") {
       setColumns(columns_3);
-      fetch("http://localhost:4000/grade")
+      fetch("https://ntheorylab-backend.herokuapp.com/grade")
         .then((res) => res.json())
         .then(
           (result) => {
@@ -203,7 +203,7 @@ export default function Historybar(props) {
         );
     } else {
       setColumns(columns_4);
-      fetch("http://localhost:4000/sets")
+      fetch("https://ntheorylab-backend.herokuapp.com/sets")
         .then((res) => res.json())
         .then(
           (result) => {
