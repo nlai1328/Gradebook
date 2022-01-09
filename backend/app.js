@@ -11,7 +11,7 @@ const GradeRouter = require("./routes/grade");
 const app = express();
 const port = process.env.PORT || 4000 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://nlai1328:bbonak1328@cluster0.9vwtf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'MONGOURL', { useNewUrlParser: true })
         .then(connect => console.log('connected to mongodb..'))
         .catch(e => console.log('could not connect to mongodb', e))
 
